@@ -1,0 +1,91 @@
+.main-container {
+    color: white;
+    overflow-x: hidden;
+}
+.title {
+    padding-top: 25%;
+    font-size: 3rem;
+}
+
+// Game section start
+.game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.game {
+    height: 648px;
+    width: 1248px;
+    // background-color: #121B29;
+    // position: absolute;
+    z-index: -1;
+
+}
+.cell-container {
+    display: flex;
+}
+.cell {
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    margin: 1px;
+    transition: background-color 1s ease-in-out;
+    // animation-duration: 1s;
+
+}
+.cell-1 {
+    // background-color: #1D2738;
+    background-color: #121B29;
+    // animation-name: new-cell;
+    // animation-duration: 3s;
+}
+/* The animation code */
+@keyframes new-cell {
+    // from {background-color: #121b29;}
+    // to {background-color: #1D2738;}
+
+    // from {background-color: #1D2738;}
+    // to {background-color: #121b29;}
+}
+// Game section end
+.menu{
+    font-size: 1.5rem;
+}
+.menu-title{
+    color: #8c99b6;
+    font-size: 2rem;
+}
+.menu-sub-title{
+    color: #525c6e;
+    font-size: 1rem;
+}
+.menu-button{
+    margin: 20px;
+    padding: 10px 20px;
+    transition: all .1s;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+.menu-button:hover{
+    scale: 1.1;
+    cursor: pointer !important;
+}
+.menu-button-small-true{
+    color: #ffffff;
+}
+.menu-button-small-false:hover{
+    scale: 1.1;
+    cursor: pointer !important;
+}
+.menu-button-small-false{
+    color: #525c6e;
+}
+.menu-icon{
+}
+.menu-input{
+    margin: 15px;
+    background: transparent;
+    border: 0px;
+    border-bottom: 1px solid white;
+    color: white;
+}

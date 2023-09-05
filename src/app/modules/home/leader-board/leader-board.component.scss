@@ -1,0 +1,37 @@
+.main-containr{
+    color: white !important;
+}
+.title{
+    font-size: 2rem;
+}
+.title3{
+    color: #384A65;
+}
+.list-container{
+    width: 100%;
+}
+.list-item{
+    height: 3rem;
+    width: 80rem;
+}
+th, td {
+    padding: 1.5rem 4rem;
+    color: white !important;
+}
+tr {
+    background: #1D2738;
+    border: 8px solid #081120;
+    border-radius: 10px !important;
+}
+.back-button{
+    cursor: pointer;
+    scale: 1.1;
+    margin: 20px;
+    padding: 10px 20px;
+    transition: all .3s ease-in-out;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+.back-button:hover{
+    scale: 1.2;
+}

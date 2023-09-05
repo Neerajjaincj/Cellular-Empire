@@ -1,0 +1,159 @@
+<div class="main-container px-5 d-flex flex-column">
+    <div class="">
+        <div>
+            <div class="title text-uppercase text-center"><span style="color:#E1113B">Cellular</span>Empire</div>
+        </div>
+        <!-- <p>
+                Welcome to Cellular Empire – a captivating twist on the classic Conway's Game of Life! Step into a world where you and a friend take on the roles of omnipotent beings, shaping the destiny of evolving civilizations. As two players, you'll engage in a strategic dance, strategically placing cells on a dynamic grid. Watch as these cells multiply, flourish, and interact, giving rise to sprawling empires or facing extinction. Navigate through challenges, adapt to changing environments, and compete to claim dominance over the ever-changing landscape. Will your collaborative efforts lead to a harmonious coexistence or a competitive clash of civilizations? Embark on this journey of creation and control in Cellular Empire, where the past, present, and future are in your hands.
+    
+            </p> -->
+        <div>
+            <div class="title mt-5 mb-3">
+                Introduction
+            </div>
+            <div>
+                &nbsp; Cellular Empire is a two-player game inspired by Conway's Game of Life, where players compete on agrid board to acheive maximum living cell as winning criteria.
+                Conway's Game of Life is a cellular automaton that simulates the evolution of a grid of cells based on a set of simple rules.
+            </div>
+        </div>
+        <div>
+            <div class="title mt-5 mb-3">
+                Three gaming modes
+            </div>
+            <div>
+                1. Quick Game : Test your skills against computer opponents at different difficulty levels, from Easy to Hard.
+            </div>
+            <div>
+                2. Multi-player Offline Game : Compete head-to-head with a friend on the same device.
+            </div>
+            <div>
+                3. Multi-player Online Game :  Connect with players worldwide over the internet, challenge friends and rise through the ranks in intense battles.
+            </div>
+        </div>
+
+        <div class="mt-5 d-flex flex-column">
+            <div class="title mb-3">
+                Game Rules
+            </div>
+            <div class=" mb-3">
+               Conway's Game of Life
+            </div>
+            <div>
+                <div>
+                    1. Any live cell with fewer than two live neighbors dies, as if by underpopulation.
+                </div>
+                <div>
+                    2. Any live cell with two or three live neighbors survives to the next generation.
+                </div>
+                <div>
+                    3. Any live cell with more than three live neighbors dies, as if by overpopulation.
+                </div>
+                <div>
+                    4. Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
+                </div>
+            </div>
+        </div>
+        <div class="mt-5 d-flex flex-column">
+            <div class="title mb-3">
+                How to play
+            </div>
+            <div>
+                <div>
+                    1. Choose a weapon/tool and construct your empire's structures.
+                </div>
+                <div>
+                    2. Utilize moving tools for offense and static tools for defense against opponent's structures.
+                </div>
+                <div>
+                    3. Expand your empire to increase the number of living cells.
+                </div>
+                <div>
+                    4. Wait for both players to finish building, then start playing.
+                </div>
+                <div>
+                    5. Engage in rounds, attacking and defending strategically.
+                </div>
+                <div>
+                    6. After each round, reinforce and repair your structures as needed.
+                </div>
+                <div>
+                    7. Play through multiple generations, adjusting tactics based on outcomes.
+                </div>
+                <div>
+                    8. Calculate the total living cells after all generations to determine the winner.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5 d-flex flex-column">
+        <div class="title mb-3">
+            Tools and Weapons
+        </div>
+        <div>
+            <div class="d-flex py-3" *ngFor="let item of tools; let ind=index">
+                <div class="pe-3">
+                    <img width="80" [src]="'assets/'+item['icon']">
+                </div>
+                <div>
+                    <div class="d-flex pb-2">
+                        <div class="text-light">
+                            {{ind+1}}.{{item['name']}}
+                        </div>
+                        <div class="ps-4 text-success">
+                            Points:{{item['points']}}
+                        </div>
+                        <div class="ps-4 text-primary">
+                            {{item['type']}}
+                        </div>
+                    </div>
+                    <div class="">
+                        {{item['desc']}}
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+       
+    </div>
+
+
+
+
+    <div class="mt-5 d-flex flex-column">
+        <div class="title mb-3">
+            Game Board
+        </div>
+        <img width="80%" src="assets/components.png">
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Description</th> </tr>
+            </thead>
+            <tbody>
+                <tr> <td>1</td> <td>Play/Pause</td> <td>Play: To start the game, Pause: To pause the game.</td> </tr>
+                <tr> <td>2</td> <td>Reset</td> <td>Reset the whole game.</td> </tr>
+                <tr> <td>3</td> <td>Speed</td> <td>Change game play speed: 0.5x, 1x, 2x, & 5x</td> </tr>
+                <tr> <td>4</td> <td>Mute</td> <td>Mute game audio</td> </tr>
+                <tr> <td>5</td> <td>Help</td> <td>Game instructions</td> </tr>
+                <tr> <td>6</td> <td>Quit</td> <td>Stop and Quit game</td> </tr>
+                <tr> <td>7</td> <td>Progress</td> <td>Percentage progress of game based on generation count</td> </tr>
+                <tr> <td>8</td> <td>Generation</td> <td>Current generation vs total generataion count</td> </tr>
+                <tr> <td>9</td> <td>Rounds</td> <td>Game rounds (4 total rounds)</td> </tr>
+                <tr> <td>10</td> <td>User Image</td> <td>User image to show user state based on score</td> </tr>
+                <tr> <td>11</td> <td>User Message</td> <td>User message and instructions for the game</td> </tr>
+                <tr> <td>12</td> <td>User Name</td> <td>Name of the user</td> </tr>
+                <tr> <td>13</td> <td>Score</td> <td>Game score of the user (Count of total live cells)</td> </tr>
+                <tr> <td>14</td> <td>Weapons/Tools</td> <td>Pre-build weapons and tools (group of live cells)</td> </tr>
+                <tr> <td>15</td> <td>Weapons/Tools Count</td> <td>Remaining count of pre-build weapons and tools</td> </tr>
+                <tr> <td>16</td> <td>Edit</td> <td>Edit one cell in the game board</td> </tr>
+                <tr> <td>17</td> <td>Undo</td> <td>undo last actions</td> </tr>
+                <tr> <td>18</td> <td>Clear</td> <td>Clear whole game board</td> </tr>
+                <!-- <tr> <td></td> <td></td> <td></td> </tr> -->
+            </tbody>
+        </table>
+    </div>
+
+</div>

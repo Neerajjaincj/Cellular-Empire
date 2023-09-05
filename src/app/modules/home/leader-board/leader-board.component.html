@@ -1,0 +1,37 @@
+<div class="main-container">
+    <div class="title text-uppercase text-center pt-5">
+        <span class="title1">Cellular</span>
+        <span class="title2">Empire</span>
+    </div>
+    <div class="title text-uppercase text-center pt-3 pb-4">
+        <span class="title3">Leader Board</span>
+    </div>
+    <div class="text-center pt-3 pb-4">
+        <span class="back-button text-light" (click)="navToPage()">Back to Main Menu</span>
+    </div>
+    <div class="list-container d-flex justify-content-center px-5 pb-5 pt-2">
+        <table>
+            <thead class="text-center">
+                <th>Rank</th>
+                <th>Name</th>
+                <th>High Score</th>
+                <th>Games Played</th>
+                <th>Win</th>
+                <th>Draw</th>
+                <th>Lose</th>
+            </thead>
+            <tbody>
+                <tr class="m-2 text-center" *ngFor="let item of scores; let ind = index">
+                    <td>{{ind+1}}</td>
+                    <td>{{item[0]}}</td>
+                    <td>{{item[1]}}</td>
+                    <td>{{item[2][0]}}</td>
+                    <td>{{item[2][1]}}</td>
+                    <td>{{item[2][2]}}</td>
+                    <td>{{item[2][3]}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

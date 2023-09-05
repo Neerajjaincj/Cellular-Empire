@@ -1,0 +1,142 @@
+<div class="main-container d-flex flex-column align-items-center text-center">
+    <div class="game p-4" id="game" >
+        <div *ngFor="let rows of gameGrid;let ind1 = index">
+            <div class="cell-container">
+                <div *ngFor="let columns of rows;let ind2 = index" class="cell cell-{{gameGrid[ind1][ind2]}}" id="game_{{ind1}}_{{ind2}}">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="home position-absolute">
+        <div>
+            <div class="title my-5 text-uppercase"><span style="color:#E1113B">Cellular</span>Empire</div>
+        </div>
+        <div class="menu d-flex flex-column align-items-center text-center mt-5" >
+            <div id="menu-1" *ngIf="menu == 1">
+                <div (click)="setMenu(2)" class="menu-button">Quick Game</div>
+                <div (click)="setMenu(3)" class="menu-button">Multi Player Game</div>
+                <!-- <div (click)="setMenu(5)" class="menu-button">Online Game</div> -->
+                <div (click)="setMenu(4)" class="menu-button mt-5">About</div>
+                <div (click)="navToPage()" class="menu-button">Leader Board</div>
+                <!-- <div></div> -->
+            </div>
+            <div id="menu-2" *ngIf="menu == 2">
+                <div class="menu-title">- Quick Game -</div>
+                <div class="menu-sub-title pt-3">Player Name: 
+                    <input maxlength="10" [(ngModel)]="player1Name" class="menu-input" placeholder="User">
+                </div>
+                <div class="text-danger menu-sub-title pt2-3">{{errorMessage}}</div>
+                <div class="menu-sub-title pt-4">Generations: 
+                    <span class="menu-button-small-{{duration==5}} p-3" (click)="duration=5">500</span>
+                    <span class="menu-button-small-{{duration==10}} p-3" (click)="duration=10">1,000</span>
+                    <span class="menu-button-small-{{duration==20}} p-3" (click)="duration=20">2,000</span>
+                </div>
+                <!-- <div class="menu-sub-title mt-4 mb-2">Select Difficulty</div> -->
+                <div class="d-flex pt-4">
+                    <div class="menu-button" (click)="difficulty=1;navToGame(1)">Easy</div>
+                    <div class="menu-button" (click)="difficulty=2;navToGame(1)">Medium</div>
+                    <div class="menu-button" (click)="difficulty=3;navToGame(1)">Hard</div>
+                </div>
+                <div class="menu-button mt-3" (click)="menu=1">Back</div>
+            </div>
+            <div id="menu-3" *ngIf="menu == 3">
+                <div class="menu-title">- Multi Player -</div>
+                <!-- <div class="menu-sub-title mb-4">Enter Details</div> -->
+                <div class="d-flex pt-4 justify-content-between">
+                    <div class="menu-button" (click)="online=1" [ngClass]="{'text-warning':online==1}">
+                        Online</div>
+                    <div class="menu-button" (click)="online=0" [ngClass]="{'text-warning':online==0}">
+                        Offline</div>
+                </div>
+                <div *ngIf="online == 0">
+                    <div class="menu-sub-title pt-3">Player 1: 
+                        <input maxlength="10" [(ngModel)]="player1Name" class="menu-input" placeholder="Name 1">
+                    </div>
+                    <div class="menu-sub-title">Player 2: 
+                        <input maxlength="10" [(ngModel)]="player2Name" class="menu-input" placeholder="Name 2">
+                    </div>
+                    <div class="menu-sub-title pt-3">Generations: 
+                        <span class="menu-button-small-{{duration==5}} p-3" (click)="duration=5">500</span>
+                        <span class="menu-button-small-{{duration==10}} p-3" (click)="duration=10">1,000</span>
+                        <span class="menu-button-small-{{duration==20}} p-3" (click)="duration=20">2,000</span>
+                    </div>
+                    <div class="text-danger menu-sub-title pt-3">{{errorMessage}}</div>
+                    <div class="menu-button mt-4" (click)="navToGame(2)">Start</div>
+                    <div class="menu-button" (click)="menu=1">Back</div>
+                </div>
+                <div id="menu-3" *ngIf="online == 1">
+                    <!-- <div class="menu-title">- Online Game -</div> -->
+                    <div *ngIf="onlineGameMode==0">
+                        <div class="menu-button m-3 mt-4" (click)="onlineGameMode=1">Host the Game</div>
+                        <div class="menu-button m-3" (click)="onlineGameMode=2">Join the game</div>
+                        <div class="menu-button mt-5" (click)="menu=1">Back</div>
+                    </div>
+                    <div *ngIf="onlineGameMode == 1">
+                        <div *ngIf="!hostGameID">
+                            <div class="menu-sub-title pt-3">Name: 
+                                <input maxlength="10" [(ngModel)]="player1Name" class="menu-input" placeholder="Enter Your Name">
+                            </div>
+                            <!-- <div class="menu-sub-title">Player 2: 
+                                <input maxlength="10" [(ngModel)]="player2Name" class="menu-input" placeholder="P2">
+                            </div> -->
+                            <div class="menu-sub-title pt-3">Generations: 
+                                <span class="menu-button-small-{{duration==5}} p-3" (click)="duration=5">500</span>
+                                <span class="menu-button-small-{{duration==10}} p-3" (click)="duration=10">1,000</span>
+                                <span class="menu-button-small-{{duration==20}} p-3" (click)="duration=20">2,000</span>
+                            </div>
+                            <div class="text-danger menu-sub-title pt-3">{{errorMessage}}</div>
+                            <div class="menu-button mt-4" (click)="onlineGame(1)">Start</div>
+                            <div class="menu-button" (click)="onlineGameMode=0">Back</div>
+                        </div>
+                        <div *ngIf="hostGameID">
+                            <div class="mt-5">
+                                <span>Game ID: </span>
+                                <span class="text-primary pt-4">{{hostGameID}}</span>
+                            </div>
+                            <div class="text-success menu-sub-title py-3">Waiting for 2nd player to join...</div>
+                            <div class="menu-button mt-5" (click)="onlineGame(-1)">Quit</div>
+                        </div>
+                    </div>
+                    <div *ngIf="onlineGameMode == 2">
+                        <div class="menu-sub-title pt-3">&nbsp;&nbsp; Name: 
+                            <input maxlength="10" [(ngModel)]="player2Name" class="menu-input" placeholder="Enter Your Name">
+                        </div>
+                        <div class="menu-sub-title">Game ID: 
+                            <input maxlength="6" [(ngModel)]="joinGameID" class="menu-input" placeholder="Enter Game ID">
+                        </div>
+                        <div class="text-danger menu-sub-title pt-3">{{errorMessage}}</div>
+                        <div class="menu-button mt-4" (click)="onlineGame(2)">Join</div>
+                        <div class="menu-button" (click)="onlineGameMode=0">Back</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="menu-3" *ngIf="menu == 4">
+                <!-- <div style="height: 500px; width: 800px; overflow-y: scroll;"> -->
+                    <div class="pb-3">MSc.Project (COMP702) </div>
+
+                    <div class="menu-sub-title pt-4">Submitted By</div>
+                    <div class="menu-sub-title text-light">Neeraj Jain Cherukunnu Jinachandran</div>
+                    <div class="menu-sub-title text-light">201666803</div>
+                    <div class="menu-sub-title pt-5">Primary Supervisor</div>
+                    <div class="menu-sub-title text-light">Louwe Kuijer</div>
+                    <div class="menu-sub-title pt-5">Secondary Supervisor</div>
+                    <div class="menu-sub-title text-light">Qiyi Tang</div>
+                    <div class="my-4">
+                        <a class="menu-sub-title text-light" href="https://forms.gle/7sVpsY87nxquqhaj9">Submit Your Feedback</a>
+                    </div>
+                    <!-- <div class="menu-sub-title pt-5">
+                        Welcome to Cellular Empire – a captivating twist on the classic Conway's Game of Life! Step into a world where you and a friend take on the roles of omnipotent beings, shaping the destiny of evolving civilizations. As two players, you'll engage in a strategic dance, strategically placing cells on a dynamic grid. Watch as these cells multiply, flourish, and interact, giving rise to sprawling empires or facing extinction. Navigate through challenges, adapt to changing environments, and compete to claim dominance over the ever-changing landscape. Will your collaborative efforts lead to a harmonious coexistence or a competitive clash of civilizations? Embark on this journey of creation and control in Cellular Empire, where the past, present, and future are in your hands.
+                    </div> -->
+                <!-- </div> -->
+                <div class="menu-button mt-4" (click)="menu=1">Back</div>
+            </div>
+            <div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
