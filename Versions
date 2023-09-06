@@ -1,0 +1,118 @@
+v3.1.3 28-AUG-2023 #NJ
+1. Weapon counts updates
+2. Help page tect updates
+
+v3.1.2 27-AUG-2023 #NJ
+1. Weapon counts updated based on game testing
+
+v3.1.1 27-AUG-2023 #NJ
+1. Weapon counts added for all weapons
+
+v3.1.0 27-AUG-2023 #NJ
+1. Weapon counts UI
+
+v3.0.3 26-AUG-2023 #NJ
+1. Game rounds added back to all game modes
+
+v3.0.2 26-AUG-2023 #NJ
+1. Help page UI
+2. New Feedback form link in about page
+
+v3.0.2 26-AUG-2023 #NJ
+1. Help page UI
+2. New Feedback form link in about page
+
+v3.0.1 25-AUG-2023 #NJ
+1. Dynamic user images based on game score
+2. Dynamic user messages based on game score
+
+v3.0.0 23-AUG-2023 #NJ
+1. Online multiplayer added
+2. New UI for Mupliplayer
+3. UI updates in Home page
+4. UI updates in Tools menu
+5. User images added
+
+v2.6.0 20-AUG-2023 #NJ
+1. Game build tools UI updates
+2. Game build controlls added (Edit, Undo, Clear)
+
+v2.5.1 18-AUG-2023 #NJ
+1. New Game controls UI
+2. Game controlls added (Reset, Audio, speed, Quit)
+
+v2.5.0 18-AUG-2023 #NJ
+1. New Game controls UI
+2. Game controlls added (Reset, Audio, speed, Quit)
+
+v2.4.3 17-AUG-2023 #NJ
+1. Leaderboard implementataion and UI updates
+2. About screen UI updates
+
+v2.4.2 16-AUG-2023 #NJ
+1. Leaderboard UI
+
+v2.4.1 16-AUG-2023 #NJ
+1. Firebase Game score storage
+2. Popup screen UI and implementation **edit: Result screen
+
+v2.4.0 16-AUG-2023 #NJ
+1. About screen UI and implementataion
+2. Firebase setup for storage
+
+
+v2.3.0 15-AUG-2023 #NJ
+1. UI updates **edit: UI Version 3
+2. Home screen UI and implementataion
+3. Navigations to all gaming screens
+
+v2.2.2 11-AUG-2023 #NJ
+1. Game generations and game rounds
+2. UI updates
+
+v2.2.1 8-AUG-2023 #NJ
+1. Quick Game : multi level implementataion
+
+v2.2.0 8-AUG-2023 #NJ
+1. Quick Game implementataion
+
+v2.1.0 6-AUG-2023 #NJ
+1. Game board Tools and Weapons implementataion
+2. Multiplayer Game implementataion **edit: Offline multiplayer
+
+v2.0.0 2-AUG-2023 #NJ
+1. UI updates **edit: UI Version 2
+2. Game board Tools and Weapons array UI
+
+v1.0.3 31-JUL-2023 #NJ
+1. UI updates
+
+v1.0.2 29-JUL-2023 #NJ
+1. UI updates
+
+v1.0.1 28-JUL-2023 #NJ
+1. New game board UI **edit: UI Version 1
+
+v1.0.0 26-JUL-2023 #NJ
+1. Angular Application setup
+2. Combited 2-player Game board implementataion
+3. UI updates
+
+v0.2.0 21-JUL-2023 #NJ
+1. Combited 2-player Game board
+
+v0.1.0 19-JUL-2023 #NJ
+1. 2 player Game board in JS + HTML
+
+v0.0.4 03-JUL-2023 #NJ
+1. Game controlls for game board
+
+v0.0.3 30-JUN-2023 #NJ
+1. 2-player version of Conway's Game of Life (JS)
+2. UI for 2 game boards
+
+v0.0.2 21-JUN-2023 #NJ
+1. UI for living/Dead cells
+
+v0.0.1 19-JUN-2023 #NJ
+1. Conway's Game of Life Algorithm implementation (JS)
