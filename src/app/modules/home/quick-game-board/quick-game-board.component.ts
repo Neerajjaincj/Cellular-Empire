@@ -30,11 +30,6 @@ export class QuickGameBoardComponent implements OnInit {
 
   ]
 
-  // glider gun
-  // [[3,-2],[3,-1],[4,-1],[4,-2],[3,8],[4,8],[5,8],[2,9],[6,9],
-  // [1,10],[7,10],[1,11],[7,11],[4,12],[2,13],[6,13],[3,14],[4,14],
-  // [5,14],[4,15],[1,18],[2,18],[3,18],[1,19],[2,19],[3,19],[0,20],
-  // [4,20],[-1,22],[0,22],[4,22],[5,22],[1,32],[2,32],[1,33],[2,33]]
   actionTool = ["Edit", "Undo", "Reset"];
   actionToolIcon = ["pi-pencil", "pi-undo", "pi-times"];
   buildMaterialName = ["Blinker", "Block", "Star", "Glider Up", "Glider Down", "Spaceship", "Pulsar"];
@@ -185,21 +180,6 @@ export class QuickGameBoardComponent implements OnInit {
     }, 1000);
   }
 
-  // buildGame2() {
-  //   clearInterval(this.lockIntervalId);
-  //   this.player1Lock = true;
-  //   this.player2Lock = false;
-  //   this.lockIntervalId = setInterval(() => {
-  //     if (this.lockCounter <= 0) {
-  //       this.lockCounter = this.lockCounterDefault
-  //       clearInterval(this.lockIntervalId);
-  //       this.buildComplete()
-  //     }
-  //     else {
-  //       this.lockCounter--
-  //     }
-  //   }, 1000);
-  // }
   buildComplete() {
     clearInterval(this.lockIntervalId);
     this.player1Lock = true;
@@ -293,8 +273,6 @@ export class QuickGameBoardComponent implements OnInit {
       }
     }
 
-    // this.test.push([inpuRow-6, inputCol-6])
-    // console.log(JSON.stringify(this.test))
     var buildMat = this.buildMaterial[buildMode]
     var pivotValue = 1
     if (inputCol > this.cols / 2) {
@@ -650,7 +628,6 @@ export class QuickGameBoardComponent implements OnInit {
         else {
           this.writeFB(playerName, player['score'], gameStat);
         }
-        // console.log(snapshot.val());
       } else {
         console.log("No data available");
         this.writeFB(playerName, currentScore, [MP, W, D, L]);

@@ -40,7 +40,6 @@ export class LeaderBoardComponent implements OnInit{
   }
 
   sortScores(){
-    // console.log(this.playersList)
     var tempArray:any = []
     for(let item in this.playersList ){
       tempArray.push([this.playersList[item]['name'], this.playersList[item]['score'],this.playersList[item]['gameStat']])

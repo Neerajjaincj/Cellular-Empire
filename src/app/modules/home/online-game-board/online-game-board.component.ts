@@ -29,11 +29,6 @@ export class OnlineGameBoardComponent implements OnInit {
 
   ]
 
-  // glider gun
-  // [[3,-2],[3,-1],[4,-1],[4,-2],[3,8],[4,8],[5,8],[2,9],[6,9],
-  // [1,10],[7,10],[1,11],[7,11],[4,12],[2,13],[6,13],[3,14],[4,14],
-  // [5,14],[4,15],[1,18],[2,18],[3,18],[1,19],[2,19],[3,19],[0,20],
-  // [4,20],[-1,22],[0,22],[4,22],[5,22],[1,32],[2,32],[1,33],[2,33]]
   actionTool = ["Edit", "Undo", "Reset"];
   actionToolIcon = ["pi-pencil", "pi-undo", "pi-times"];
   buildMaterialName = ["Blinker", "Block", "Star", "Glider Up", "Glider Down", "Spaceship", "Pulsar"];
@@ -516,7 +511,6 @@ export class OnlineGameBoardComponent implements OnInit {
     onValue(gameListenRef, (snapshot: any) => {
       if (snapshot.exists()) {
         var game = snapshot.val()
-        console.log(game)
         if (game['status']) {
           if (game['status']['1']) { this.player1Message = "I am ready"; }
           if (game['status']['2']) { this.player2Message = "I am ready"; }
@@ -673,7 +667,6 @@ export class OnlineGameBoardComponent implements OnInit {
         else {
           this.writeFB(playerName, player['score'], gameStat);
         }
-        // console.log(snapshot.val());
       } else {
         console.log("No data available");
         this.writeFB(playerName, currentScore, [MP, W, D, L]);

@@ -16,10 +16,8 @@
             <div id="menu-1" *ngIf="menu == 1">
                 <div (click)="setMenu(2)" class="menu-button">Quick Game</div>
                 <div (click)="setMenu(3)" class="menu-button">Multi Player Game</div>
-                <!-- <div (click)="setMenu(5)" class="menu-button">Online Game</div> -->
                 <div (click)="setMenu(4)" class="menu-button mt-5">About</div>
                 <div (click)="navToPage()" class="menu-button">Leader Board</div>
-                <!-- <div></div> -->
             </div>
             <div id="menu-2" *ngIf="menu == 2">
                 <div class="menu-title">- Quick Game -</div>
@@ -32,7 +30,6 @@
                     <span class="menu-button-small-{{duration==10}} p-3" (click)="duration=10">1,000</span>
                     <span class="menu-button-small-{{duration==20}} p-3" (click)="duration=20">2,000</span>
                 </div>
-                <!-- <div class="menu-sub-title mt-4 mb-2">Select Difficulty</div> -->
                 <div class="d-flex pt-4">
                     <div class="menu-button" (click)="difficulty=1;navToGame(1)">Easy</div>
                     <div class="menu-button" (click)="difficulty=2;navToGame(1)">Medium</div>
@@ -42,7 +39,6 @@
             </div>
             <div id="menu-3" *ngIf="menu == 3">
                 <div class="menu-title">- Multi Player -</div>
-                <!-- <div class="menu-sub-title mb-4">Enter Details</div> -->
                 <div class="d-flex pt-4 justify-content-between">
                     <div class="menu-button" (click)="online=1" [ngClass]="{'text-warning':online==1}">
                         Online</div>
@@ -66,7 +62,6 @@
                     <div class="menu-button" (click)="menu=1">Back</div>
                 </div>
                 <div id="menu-3" *ngIf="online == 1">
-                    <!-- <div class="menu-title">- Online Game -</div> -->
                     <div *ngIf="onlineGameMode==0">
                         <div class="menu-button m-3 mt-4" (click)="onlineGameMode=1">Host the Game</div>
                         <div class="menu-button m-3" (click)="onlineGameMode=2">Join the game</div>
@@ -77,9 +72,6 @@
                             <div class="menu-sub-title pt-3">Name: 
                                 <input maxlength="10" [(ngModel)]="player1Name" class="menu-input" placeholder="Enter Your Name">
                             </div>
-                            <!-- <div class="menu-sub-title">Player 2: 
-                                <input maxlength="10" [(ngModel)]="player2Name" class="menu-input" placeholder="P2">
-                            </div> -->
                             <div class="menu-sub-title pt-3">Generations: 
                                 <span class="menu-button-small-{{duration==5}} p-3" (click)="duration=5">500</span>
                                 <span class="menu-button-small-{{duration==10}} p-3" (click)="duration=10">1,000</span>
@@ -113,7 +105,6 @@
             </div>
 
             <div id="menu-3" *ngIf="menu == 4">
-                <!-- <div style="height: 500px; width: 800px; overflow-y: scroll;"> -->
                     <div class="pb-3">MSc.Project (COMP702) </div>
 
                     <div class="menu-sub-title pt-4">Submitted By</div>

@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { QuickGameBoardComponent } from './quick-game-board/quick-game-board.component';
 import { OfflineGameBoardComponent } from './offline-game-board/offline-game-board.component';
-import { LandingComponent } from './landing/landing.component';
 import { LeaderBoardComponent } from './leader-board/leader-board.component';
 import { OnlineGameBoardComponent } from './online-game-board/online-game-board.component';
 import { GameRulesComponent } from './game-rules/game-rules.component';
@@ -12,7 +11,6 @@ import { GameRulesComponent } from './game-rules/game-rules.component';
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'home', component: HomeComponent},
-  { path: 'landing', component: LandingComponent},
   { path: 'help', component: GameRulesComponent},
   { path: 'quick-game', component: QuickGameBoardComponent},
   { path: 'offline-game', component: OfflineGameBoardComponent},
