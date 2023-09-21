@@ -16,8 +16,6 @@
 .game {
     height: 648px;
     width: 1248px;
-    // background-color: #121B29;
-    // position: absolute;
     z-index: -1;
 
 }
@@ -30,23 +28,12 @@
     border-radius: 5px;
     margin: 1px;
     transition: background-color 1s ease-in-out;
-    // animation-duration: 1s;
 
 }
 .cell-1 {
-    // background-color: #1D2738;
     background-color: #121B29;
-    // animation-name: new-cell;
-    // animation-duration: 3s;
 }
-/* The animation code */
-@keyframes new-cell {
-    // from {background-color: #121b29;}
-    // to {background-color: #1D2738;}
 
-    // from {background-color: #1D2738;}
-    // to {background-color: #121b29;}
-}
 // Game section end
 .menu{
     font-size: 1.5rem;

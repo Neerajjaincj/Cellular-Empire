@@ -6,19 +6,14 @@
   }
 body{
     margin: 0;
-    // background-color: #333333;
-    // background-color: #293346 !important;
     background-color: #081120 !important;
-    // background: linear-gradient(0deg, rgba(18,27,41,1) 0%, rgb(51, 62, 81) 100%);
     min-height: 100vh;
-    // background: linear-gradient(0deg, rgba(41,51,70,1) 0%, rgba(18,27,41,1) 100%);
     font-family: 'ce-fn' !important;
 }
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
 @import "primeicons/primeicons.css";
-
 
 .title{
   font-size: 1.5rem;
@@ -29,16 +24,9 @@ body{
 .title2{
   color: #fff;
 }
-
-
-
-
 .tooltipP {
   position: relative;
-  // display: inline-block;
-  // border-bottom: 1px dotted black;
 }
-
 .tooltipP .tooltipC{
   visibility: hidden;
   width: 10px;
@@ -49,41 +37,21 @@ body{
   padding: 5px 0;
   position: absolute;
   z-index: 1;
-  // top: 0;
-  // left: 50%;
-  // margin-left: -60px;
   opacity: 0;
   transition: opacity 0.3s;
 }
-
 .tooltipP .tooltipCTop {
   bottom: 100%;
 }
 .tooltipP .tooltipCBottom {
   top: 100%;
 }
-
 .tooltipP .tooltipCLeft {
-  // top: 0;
   right: 100%;
-  // left: inherit;
 }
 .tooltipP .tooltipCRight {
-  // top: 0;
   left: 100%;
 }
-
-//   .tooltipP .tooltipC::after {
-//     content: "";
-//     position: absolute;
-//     top: 100%;  
-//     left: 50%;
-//     margin-left: -5px;
-//     border-width: 5px;
-//     border-style: solid;
-//     border-color: #555 transparent transparent transparent;
-//   }
-
 .tooltipP:hover .tooltipC{
   visibility: visible;
   opacity: 1;

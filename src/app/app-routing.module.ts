@@ -4,9 +4,6 @@ import { CustomPreloadingWithDelayStrategy } from 'src/app/configurations/Custom
 
 const routes: Routes = [
   { path: '', loadChildren: () => import('src/app/modules/home/home.module').then(m => m.HomeModule), data: { preload: true }  },
-  // { path: '**', redirectTo: ''}
-  // { path: '**', redirectTo: ''}
-
 ];
 
 @NgModule({

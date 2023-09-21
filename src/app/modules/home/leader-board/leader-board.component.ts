@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { initializeApp } from "firebase/app";
 import { getDatabase, ref, get, child } from "firebase/database";
 import { GameService } from '../services/game.service';
 

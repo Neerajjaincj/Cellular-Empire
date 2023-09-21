@@ -97,7 +97,6 @@ export class OfflineGameBoardComponent implements OnInit {
   }
 
   initPage() {
-    // this.gameContainer = document.getElementById("game1");
     this.player1Name = this.gameService.players.player1.name;
     this.player2Name = this.gameService.players.player2.name;
     this.gameDuration = this.gameService.gameConfig.duration * 100;
@@ -107,7 +106,7 @@ export class OfflineGameBoardComponent implements OnInit {
     this.buildMaterialCount2 = JSON.parse(JSON.stringify(this.buildMaterialCountDefault));
 
     if (this.player1Name == "" || this.player1Name == "") {
-      // this.router.navigateByUrl("home")
+      this.router.navigateByUrl("home")
     }
 
     this.gameGrid = this.createEmptyGrid(this.rows, this.cols);
@@ -139,10 +138,6 @@ export class OfflineGameBoardComponent implements OnInit {
       // multi player
       this.player1Lock = true;
       this.player2Lock = true;
-      // setTimeout(() => {
-      //   // this.playAudio("audio0");
-      //   // this.buildGame1(1);
-      // }, 3000);
     }
   }
 
@@ -152,8 +147,6 @@ export class OfflineGameBoardComponent implements OnInit {
       || (playerSection == 2 && this.player1Lock == false)){
         return;
     }
-
-
     if(playerSection == 1){
       this.player1Message = "Build your empire !"
       this.buildGame1(1);
@@ -177,7 +170,6 @@ export class OfflineGameBoardComponent implements OnInit {
         clearInterval(this.lockIntervalId);
         if(playerNumber == 1){this.player1buildComplete= true}
         else if(playerNumber == 2){this.player2buildComplete= true}
-        // this.buildGame2()
         this.buildComplete()
       }
       else {
@@ -191,7 +183,6 @@ export class OfflineGameBoardComponent implements OnInit {
     this.player1Lock = true;
     this.player2Lock = true;
   }
-
 
   // Create an empty grid
   createEmptyGrid(rows: number, cols: number) {
@@ -214,7 +205,6 @@ export class OfflineGameBoardComponent implements OnInit {
   }
 
   // Toggle the state of a cell
-
   selectActionTool(index: number) {
     this.playAudio('audio5')
 
@@ -303,22 +293,15 @@ export class OfflineGameBoardComponent implements OnInit {
       else {
         cell.style.backgroundColor = this.gameGrid[row][col] === 0 ? "#1D2738" : color2;
       }
-
-
     });
-
 
     // Update living cell count for the respective player
     this.countLivingCells(this.gameGrid);
-
-
-    // const audio:any = document.querySelector("audio");
 
     if (undo == false) {
       this.playAudio("audio1")
       this.buildHistory.push([buildMode, inputRow, inputCol])
     }
-
   }
 
   // Count the number of living cells in the grid
@@ -338,7 +321,7 @@ export class OfflineGameBoardComponent implements OnInit {
       }
     }
 
-    // dead
+    // dead cell
     if (this.count1Display - count1 > 20 && this.count2Display - count2 > 20) {
       this.playAudio("audio3")
     }
@@ -346,12 +329,6 @@ export class OfflineGameBoardComponent implements OnInit {
     if(this.generationCount%10 == 0){
       this.smileyUpdates(count1, count2);
     }
-   
-
-    // born
-    // if(this.count1Display - count1 < -10 || this.count2Display - count2 < -10 ){
-    //   this.playAudio("audio4")
-    // }
 
     this.count1Display = count1
     this.count2Display = count2
@@ -421,11 +398,9 @@ export class OfflineGameBoardComponent implements OnInit {
         var color1 = "#" + "E7" + rdm2 + rdm1
         var color2 = "#" + rdm3 + "B9" + rdm2
         if (j < this.cols / 2) {
-          // cell.style.backgroundColor = grid[i][j] === 0 ? "#0000" : "#E72E59";
           cell.style.backgroundColor = grid[i][j] === 0 ? "#1D2738" : color1;
         }
         else {
-          // cell.style.backgroundColor = grid[i][j] === 0 ? "#0000" : "#4CB931";
           cell.style.backgroundColor = grid[i][j] === 0 ? "#1D2738" : color2;
         }
       }
@@ -622,8 +597,6 @@ export class OfflineGameBoardComponent implements OnInit {
     } else { return }
   }
 
-
-
   updateScore(playerName: string, currentScore: number, opponentScore: number) {
     const dbRef = ref(getDatabase());
     var MP = 1, W = 0, D = 0, L = 0;
@@ -661,7 +634,6 @@ export class OfflineGameBoardComponent implements OnInit {
       gameStat: gameStat
     });
   }
-
   navToPage() {
     this.router.navigateByUrl("leader-board");
   }

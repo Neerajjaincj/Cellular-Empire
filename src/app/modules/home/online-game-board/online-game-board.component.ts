@@ -96,7 +96,6 @@ export class OnlineGameBoardComponent implements OnInit {
 
 
   initPage() {
-    // this.gameContainer = document.getElementById("game1");
     this.player1Name = this.gameService.players.player1.name;
     this.player2Name = this.gameService.players.player2.name;
     this.gameDuration = this.gameService.gameConfig.duration * 100;
@@ -110,7 +109,6 @@ export class OnlineGameBoardComponent implements OnInit {
       this.router.navigateByUrl("home")
     }
     this.gameGrid = this.createEmptyGrid(this.rows, this.cols);
-    // this.box = document.querySelector(".game");
 
     this.startGameCounterID = setInterval(() => {
       if (this.gameStartCounter <= 0) {
@@ -232,7 +230,6 @@ export class OnlineGameBoardComponent implements OnInit {
       return;
     }
 
-
     if (inputCol < this.cols / 2) {
       if(undo){
         this.buildMaterialCount1[buildMode]++
@@ -273,7 +270,6 @@ export class OnlineGameBoardComponent implements OnInit {
       var color1 = "#" + "E7" + rdm2 + rdm1
       var color2 = "#" + rdm3 + "B9" + rdm2
       if (col < this.cols / 2) {
-        // cell.style.backgroundColor = this.gameGrid[row][col] === 0 ? "#0001" : color1;
         cell.style.backgroundColor = this.gameGrid[row][col] === 0 ? "#1D2738" : color1;
       }
       else {
@@ -283,12 +279,8 @@ export class OnlineGameBoardComponent implements OnInit {
 
     });
 
-
     // Update living cell count for the respective player
     this.countLivingCells(this.gameGrid);
-
-
-    // const audio:any = document.querySelector("audio");
 
     if (undo == false) {
       this.playAudio("audio1")
@@ -314,7 +306,7 @@ export class OnlineGameBoardComponent implements OnInit {
       }
     }
 
-    // dead
+    // dead cell
     if (this.count1Display - count1 > 20 && this.count2Display - count2 > 20) {
       this.playAudio("audio3")
     }
@@ -323,12 +315,6 @@ export class OnlineGameBoardComponent implements OnInit {
       this.smileyUpdates(count1, count2);
     }
    
-
-    // born
-    // if(this.count1Display - count1 < -10 || this.count2Display - count2 < -10 ){
-    //   this.playAudio("audio4")
-    // }
-
     this.count1Display = count1
     this.count2Display = count2
   }
@@ -397,11 +383,9 @@ export class OnlineGameBoardComponent implements OnInit {
         var color1 = "#" + "E7" + rdm2 + rdm1
         var color2 = "#" + rdm3 + "B9" + rdm2
         if (j < this.cols / 2) {
-          // cell.style.backgroundColor = grid[i][j] === 0 ? "#0000" : "#E72E59";
           cell.style.backgroundColor = grid[i][j] === 0 ? "#1D2738" : color1;
         }
         else {
-          // cell.style.backgroundColor = grid[i][j] === 0 ? "#0000" : "#4CB931";
           cell.style.backgroundColor = grid[i][j] === 0 ? "#1D2738" : color2;
         }
       }
@@ -481,16 +465,6 @@ export class OnlineGameBoardComponent implements OnInit {
     }
   }
   rematch(clearAll = false){
-    // if(clearAll){
-
-    // } else{
-    //   let gameSetRef = set(ref(this.gameService.fbDatabase, hostURL + "/game/0"), { 0: "" });
-
-    // }
-
-    // this.resetGame(); 
-    // this.initPage();
-
   }
   updateProgressBar(generationCount: number) {
 

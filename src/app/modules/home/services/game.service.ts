@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, set, get, child, onValue } from "firebase/database";
+import { getDatabase } from "firebase/database";
 import { environment } from 'src/environments/environment';
 
 @Injectable({

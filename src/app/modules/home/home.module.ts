@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { SharedModule } from '../shared/shared.module';
 import { HomeRoutingModule } from './home-routing.module';
 
 import { HomeComponent } from './home/home.component';
@@ -11,7 +11,6 @@ import { OnlineGameBoardComponent } from './online-game-board/online-game-board.
 import { LeaderBoardComponent } from './leader-board/leader-board.component';
 
 import { TooltipModule } from 'primeng/tooltip';
-import { ProgressBarModule } from 'primeng/progressbar';
 import { GameRulesComponent } from './game-rules/game-rules.component';
 
 @NgModule({
@@ -26,10 +25,10 @@ import { GameRulesComponent } from './game-rules/game-rules.component';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
 
     TooltipModule,
-    ProgressBarModule,
   ]
 })
 export class HomeModule { }

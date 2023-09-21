@@ -35,12 +35,8 @@ export class HomeComponent {
 
   ngOnInit() {
 
-
     // game section start
     this.gameGrid = this.createEmptyGrid(this.rows, this.cols);
-    // setTimeout(() => {
-    // this.playAudio("audio0");
-    // }, 5000);
     this.addRandomCells()
     this.addRandomCells()
     this.addRandomCells()
@@ -52,7 +48,6 @@ export class HomeComponent {
     this.gameService.initializeFB();
 
   }
-
 
   // game section start
   createEmptyGrid(rows: number, cols: number) {
@@ -289,8 +284,5 @@ export class HomeComponent {
   navToPage(){
     this.router.navigateByUrl("leader-board");
   }
-
-
-
 
 }

@@ -98,7 +98,6 @@ export class QuickGameBoardComponent implements OnInit {
   }
 
   initPage() {
-    // this.gameContainer = document.getElementById("game1");
     this.player1Name = this.gameService.players.player1.name;
     this.player2Name = this.gameService.players.player2.name;
     this.gameDuration = this.gameService.gameConfig.duration * 100;
@@ -106,10 +105,6 @@ export class QuickGameBoardComponent implements OnInit {
     this.generationLimit = this.generationsPerRound[this.gameRound-1];
     this.buildMaterialCount1 = JSON.parse(JSON.stringify(this.buildMaterialCountDefault));
     this.buildMaterialCount2 = JSON.parse(JSON.stringify(this.buildMaterialCountDefault));
-
-    if (this.player1Name == "" || this.player1Name == "") {
-      // this.router.navigateByUrl("home")
-    }
 
     this.gameGrid = this.createEmptyGrid(this.rows, this.cols);
 
@@ -140,10 +135,6 @@ export class QuickGameBoardComponent implements OnInit {
       // multi player
       this.player1Lock = true;
       this.player2Lock = true;
-      // setTimeout(() => {
-      //   // this.playAudio("audio0");
-      //   // this.buildGame1(1);
-      // }, 3000);
     }
   }
 
@@ -171,7 +162,6 @@ export class QuickGameBoardComponent implements OnInit {
         clearInterval(this.lockIntervalId);
         if(playerNumber == 1){this.player1buildComplete= true}
         else if(playerNumber == 2){this.player2buildComplete= true}
-        // this.buildGame2()
         this.buildComplete()
       }
       else {
@@ -331,7 +321,7 @@ export class QuickGameBoardComponent implements OnInit {
       }
     }
 
-    // dead
+    // dead cell
     if (this.count1Display - count1 > 20 && this.count2Display - count2 > 20) {
       this.playAudio("audio3")
     }
@@ -339,12 +329,6 @@ export class QuickGameBoardComponent implements OnInit {
     if(this.generationCount%10 == 0){
       this.smileyUpdates(count1, count2);
     }
-   
-
-    // born
-    // if(this.count1Display - count1 < -10 || this.count2Display - count2 < -10 ){
-    //   this.playAudio("audio4")
-    // }
 
     this.count1Display = count1
     this.count2Display = count2

@@ -3,7 +3,6 @@
         <div *ngFor="let rows of gameGrid;let ind1 = index">
             <div class="cell-container">
                 <div *ngFor="let columns of rows;let ind2 = index" class="cell cell-{{gameGrid[ind1][ind2]}}" id="game_{{ind1}}_{{ind2}}">
-                    
                 </div>
             </div>
         </div>
@@ -117,17 +116,10 @@
                     <div class="my-4">
                         <a class="menu-sub-title text-light" href="https://forms.gle/7sVpsY87nxquqhaj9">Submit Your Feedback</a>
                     </div>
-                    <!-- <div class="menu-sub-title pt-5">
-                        Welcome to Cellular Empire – a captivating twist on the classic Conway's Game of Life! Step into a world where you and a friend take on the roles of omnipotent beings, shaping the destiny of evolving civilizations. As two players, you'll engage in a strategic dance, strategically placing cells on a dynamic grid. Watch as these cells multiply, flourish, and interact, giving rise to sprawling empires or facing extinction. Navigate through challenges, adapt to changing environments, and compete to claim dominance over the ever-changing landscape. Will your collaborative efforts lead to a harmonious coexistence or a competitive clash of civilizations? Embark on this journey of creation and control in Cellular Empire, where the past, present, and future are in your hands.
-                    </div> -->
-                <!-- </div> -->
                 <div class="menu-button mt-4" (click)="menu=1">Back</div>
             </div>
             <div>
             </div>
         </div>
     </div>
-
-
-
 </div>
